@@ -7,6 +7,7 @@ const users = [];
 
 app.use(bodyParser.json());
 app.use(express.static(process.cwd()+"/my-app/dist/angular-nodejs-example/"));
+//app.use(express.static(process.cwd()+"/my-app/dist/angular-nodejs-example/"));
 
 app.get('/api/users', (req, res) => {
   res.json(users);
@@ -20,6 +21,7 @@ app.post('/api/user', (req, res) => {
 
 app.get('/', (req,res) => {
   res.sendFile(process.cwd()+"/my-app/dist/angular-nodejs-example/index.html")
+  //res.sendFile(process.cwd()+"/my-app/dist/angular-nodejs-example/index.html")
 });
 
 app.listen(port, () => {

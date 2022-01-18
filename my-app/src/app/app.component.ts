@@ -1,3 +1,4 @@
+
 import { Component, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AppService } from './app.service';
@@ -27,7 +28,6 @@ export class AppComponent implements OnDestroy {
   destroy$: Subject<boolean> = new Subject<boolean>();
 
   onSubmit() {
-
     this.appService.addUser(this.userForm.value).pipe(takeUntil(this.destroy$)).subscribe(data => {
       console.log('message::::', data);
       this.userCount = this.userCount + 1;
@@ -47,3 +47,4 @@ export class AppComponent implements OnDestroy {
     this.destroy$.unsubscribe();
   }
 }
+
